@@ -12,6 +12,8 @@ exports.up = function(knex) {
       .notNullable()
       .unique();
     tbl.string('full_name').notNullable();
+    tbl.boolean('dark_mode').defaultTo(false);
+    tbl.text('bio');
   });
 };
 
