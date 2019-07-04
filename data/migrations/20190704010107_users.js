@@ -11,6 +11,7 @@ exports.up = function(knex) {
       .string('username')
       .notNullable()
       .unique();
+    tbl.string('full_name').notNullable();
   });
 };
 
