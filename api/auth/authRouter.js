@@ -17,15 +17,8 @@ router.post('/register', (req, res) => {
     } else {
       return db
         .register(req.body)
-        .then(([id]) => {
-          return db
-            .findBy({ id })
-            .then(user => {
-              return res.status(200).json(user);
-            })
-            .catch(({ message }) => {
-              return res.status(500).json({ message });
-            });
+        .then(user => {
+          return res.status(200).json(user);
         })
         .catch(({ message }) => {
           return res.status(500).json({ message });
