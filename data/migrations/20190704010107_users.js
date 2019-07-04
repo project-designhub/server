@@ -3,10 +3,9 @@ exports.up = function(knex) {
     tbl.increments();
     tbl.string('name');
     tbl.string('email');
-    tbl.string('image_url');
+    tbl.string('profile_picture');
     tbl.string('nickname');
     tbl.string('sub');
-    tbl.string('signature');
   });
 };
 

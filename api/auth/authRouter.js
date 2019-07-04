@@ -7,7 +7,7 @@ const router = express.Router();
 router.post('/register', (req, res) => {
   const { name, email, image_url, nickname, sub } = req.body;
 
-  if (!name || !email || !image_url || !nickname || !sub) {
+  if (!name || !email || !profile_picture || !nickname || !sub) {
     return res.status(400).json({ message: 'Missing fields' });
   }
 
