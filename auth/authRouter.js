@@ -11,7 +11,7 @@ router.post('/register', (req, res) => {
     return res.status(400).json({ message: 'Missing fields' });
   }
 
-  db.findBy({ email, sub }).then(exists => {
+  db.findBy({ email, username }).then(exists => {
     if (exists) {
       return res.status(200).json(exists);
     } else {

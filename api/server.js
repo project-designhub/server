@@ -3,7 +3,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 const helmet = require('helmet');
 
-const authRouter = require('./auth/authRouter');
+const authRouter = require('../auth/authRouter');
 const usersRouter = require('./users/usersRouter');
 
 const server = express();
@@ -17,7 +17,7 @@ server.use(cors());
 
 // routes
 
-server.use('/api/auth', authRouter);
+server.use('/auth', authRouter);
 server.use('/api/users', usersRouter);
 
 // test if api works

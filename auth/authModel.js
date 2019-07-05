@@ -1,6 +1,7 @@
-const db = require('../../data/dbConfig');
+const db = require('../data/dbConfig');
 
 const register = user => {
+  console.log(user);
   return db('users').insert(user);
 };
 
