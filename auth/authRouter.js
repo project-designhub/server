@@ -17,8 +17,10 @@ router.post('/register', (req, res) => {
     } else {
       return db
         .register(req.body)
-        .then(user => {
-          return res.status(200).json(user);
+        .then(() => {
+          return db.findBy({ email, username }).then(user => {
+            return res.status(201).json(user);
+          });
         })
         .catch(({ message }) => {
           return res.status(500).json({ message });
