@@ -5,9 +5,9 @@ const db = require('./authModel');
 const router = express.Router();
 
 router.post('/register', (req, res) => {
-  const { name, email, username, full_name } = req.body;
+  const { email, username } = req.body;
 
-  if (!name || !email || !username || !full_name) {
+  if (!email || !username) {
     return res.status(400).json({ message: 'Missing fields' });
   }
 
