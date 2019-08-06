@@ -16,7 +16,7 @@ router.post('/register', (req, res) => {
   }
 
   // this is for the authenticate middleware for private routes
-  const token = jwt(req.body, process.env.TOKEN_SECRET);
+  const token = jwt.sign(req.body, process.env.TOKEN_SECRET);
 
   db.findBy({ email, sub }).then(exists => {
     // This works well with auth0
