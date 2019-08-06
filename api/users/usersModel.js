@@ -14,8 +14,15 @@ const getAll = () => {
   return db('users');
 };
 
+const update = (filter, item) => {
+  return db('users')
+    .where(filter)
+    .update(item);
+};
+
 module.exports = {
   findBy,
   findAllBy,
-  getAll
+  getAll,
+  update
 };
