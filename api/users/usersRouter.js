@@ -5,7 +5,7 @@ const { authenticate } = require('../../auth/authMiddleware');
 
 const router = express.Router();
 
-router.get('/', authenticate, (req, res) => {
+router.get('/', (req, res) => {
   db.getAll()
     .then(users => {
       return res.status(200).json(users);

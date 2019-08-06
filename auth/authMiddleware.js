@@ -1,5 +1,5 @@
 const jwtDecode = require('jwt-decode');
-const db = require('../users/usersModel');
+const db = require('../api/users/usersModel');
 
 const authenticate = (req, res, next) => {
   const token = req.get('Authorization');
