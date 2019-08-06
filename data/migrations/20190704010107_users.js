@@ -6,9 +6,10 @@ exports.up = function(knex) {
       .notNullable()
       .unique();
     tbl
-      .string('username')
+      .string('sub')
       .notNullable()
       .unique();
+    tbl.string('username').unique();
     tbl.string('profile_picture');
     tbl.string('full_name');
     tbl.boolean('dark_mode').defaultTo(false);

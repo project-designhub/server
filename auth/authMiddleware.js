@@ -5,7 +5,9 @@ const authenticate = (req, res, next) => {
   const token = req.get('Authorization');
 
   if (token) {
+    // if token exists in the headers, decode that token
     const decoded = jwtDecode(token);
+    // decoded token's sub and email must match user and sub in database
     db.findBy('users', {
       email: decoded.email,
       sub: decoded.sub
